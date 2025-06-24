@@ -1,0 +1,265 @@
+/* App.css */
+
+/* Reset básico */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f5; /* rosa lavanda pastel */
+  color: #444;
+}
+
+/* Contenedor general */
+.pagina {
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+/* Título principal */
+h2 {
+  text-align: center;
+  color: #e75480;
+  margin-bottom: 2rem;
+}
+
+/* Estilos para galería */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.galeria-item {
+  background-color: #f7c8d8;
+  border: 2px solid #e75480;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+  transform: translateY(-5px);
+}
+
+.galeria-item img {
+  width: 100%;
+  border-radius: 10px;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.galeria-item p {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: #7a2d45;
+}
+
+/* Botones */
+button,
+.btn {
+  background-color: #7ed6c1;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #63c6ae;
+}
+
+/* Formularios */
+form {
+  max-width: 500px;
+  margin: auto;
+  background: #f7c8d8;
+  padding: 2rem;
+  border-radius: 15px;
+  border: 2px solid #e75480;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+/* Footer */
+footer {
+  background-color: #e75480;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+
+/*noticicas*/
+.noticia {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: rgba(255, 240, 245, 0.95);
+  padding: 1rem;
+  margin: 1rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.2);
+  max-width: 800px;
+}
+
+.noticia-imagen {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #ffb6c1;
+}
+
+.noticia-texto h3 {
+  margin: 0;
+  color: #d63384;
+}
+
+.noticia-texto p {
+  margin: 0.3rem 0 0;
+  color: #6b306f;
+}
+
+
+/*carrusel*/
+.noticias-carousel {
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.noticia {
+  background-color: rgba(255, 240, 245, 0.9);
+  padding: 1rem;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 6px 15px rgba(255, 182, 193, 0.3);
+}
+
+.noticia-imagen {
+  width: 120px;
+  height: 120px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 2px solid #f79cd4;
+}
+
+.noticia-texto h3 {
+  color: #d63384;
+  margin: 0;
+}
+
+.noticia-texto p {
+  color: #6b306f;
+  margin: 0.5rem 0 0;
+}
+
+
+
+/*lluvia de estrellas*/
+/* Fondo global animado con estrellas en tonos rosados brillantes */
+.fondo-animado {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #ffe6f0 0%, #ffe6f0 100%);
+  animation: fondoLento 30s infinite alternate;
+}
+
+/* Partículas (estrellas brillantes) */
+.fondo-animado::before, .fondo-animado::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+                    radial-gradient(circle, rgba(255,182,193,0.7) 1.5px, transparent 1.5px),
+                    radial-gradient(circle, rgba(255,105,180,0.5) 2px, transparent 2px);
+  background-size: 60px 60px, 100px 100px, 140px 140px;
+  animation: moverEstrellas 60s linear infinite;
+  opacity: 0.5;
+}
+
+@keyframes moverEstrellas {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes fondoLento {
+  from {
+    background-color: #fff0f5;
+  }
+  to {
+    background-color: #ffe6f0;
+  }
+}
+
+/*botones galeria*/
+/* frontend/src/App.css o un archivo CSS que uses */
+
+.galeria-nav {
+  margin-bottom: 20px; /* Espacio debajo de los botones */
+  display: flex; /* Para que los botones estén en línea */
+  gap: 15px; /* Espacio entre los botones */
+  justify-content: center; /* Centrar los botones horizontalmente */
+  padding: 10px;
+  background-color: #f0f0f0; /* Fondo sutil para la barra de navegación */
+  border-radius: 8px;
+}
+
+.boton-navegacion {
+  display: inline-block; /* Hace que el área clicable sea el botón completo */
+  padding: 10px 20px;
+  background-color: #d63384; /* Color azul bonito */
+  color: white; /* Texto blanco */
+  text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+  border-radius: 5px; /* Bordes redondeados */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer; /* Cambia el cursor al pasar por encima */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transición suave */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+}
+
+.boton-navegacion:hover {
+  background-color: #f79cd4; /* Color más oscuro al pasar el ratón */
+  transform: translateY(-2px); /* Efecto ligero de "levantar" */
+}
+
+.boton-navegacion:active {
+  background-color: #f79cd4; /* Color aún más oscuro al hacer clic */
+  transform: translateY(0); /* Vuelve a la posición original */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Sombra más pequeña al hacer clic */
+}
+
+.titulo-principal{
+  color: #d63384;
+  font-weight: bold;
+  text-align: center;
+}
+.descripcion{
+  text-align: center;
+}
